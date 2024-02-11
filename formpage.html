@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+    <link rel="stylesheet" type="text/css" href="formstyle.css">
+    <script src="inputscript.js"></script>
+    <script src="checkboxes.js"></script>
+  </head>
+
+<body>
+  <div id="progress"></div>
+<header class="header">
+  <a href="index.html" class="logo">PUP</a>
+
+  <nav class="navbar">
+    <a href="">Home</a>
+    <a href="">About</a>
+    <a href="">Services</a>
+    <a href="">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <form method="post" action="https://script.google.com/macros/s/AKfycbzXgAuEIMS7iiesW1YVcdr2b-_QVtlYB8oXRsthGVh3OvZnKWOvbSrbjtQfSsDo0LGqrw/exec">
+    <div>
+      <h1>Application For New / Replacement Of Identification Card</h1>
+      <p>Scroll down to fill in the form.</p>
+    </div>
+    <ul id="cards">
+		<li class="card" id="card_1">
+			<div class="card__content">
+				<div>
+          <br>
+					<h2>Reason for Applying</h2>
+					<p>* Select one.</p>
+            <div class="column">                
+                <input type="checkbox" name="Reason" id="Transferee" value="Transferee">
+                <label for="Transferee">Transferee</label>
+                <br>
+                <input type="checkbox" name="Reason" id="Late Filling" value="Late Filling">
+                <label for="Late Filling">Late Filling</label>
+                <br>
+                <input type="checkbox" name="Reason" id="Old Id" value="Old Id">
+                <label for="Old Id">Old Id</label>
+                <input type="checkbox" name="Reason" id="Shiftee" value="Shiftee">
+                <label for="Shiftee">Shiftee</label>
+                <br>
+                <input type="checkbox" name="Reason" id="Damaged" value="Damaged">
+                <label for="Damaged">Damaged</label>
+                <br>
+                <input type="checkbox" name="Reason" id="Correction of Entry" value="Correction of Entry">
+                <label for="Correction of Entry">Correction of Entry</label>
+                <br>
+                <input type="checkbox" name="Reason" id="LHS" value="LHS">
+                <label for="LHS">LHS</label>
+                <input type="checkbox" name="Reason" id="SHS" value="SHS">
+                <label for="SHS">SHS</label>
+                <br>
+                <input type="checkbox" name="Reason" id="Undergrad" value="Undergrad">
+                <label for="Undergrad">Undergrad</label>
+                <br>
+                <input type="checkbox" name="Reason"  id="College of Law" value="College of Law">
+                <label for="College of Law">College of Law</label>
+              <input type="checkbox" name="Reason" id="Graduate School" value="Graduate School">
+              <label for="Graduate School">Graduate School</label>
+              <br>
+              <input type="checkbox" name="Reason" id="Open University" value="Open University">
+              <label for="Open University">Open University</label>
+              <br>
+              <input type="checkbox" name="Reason" id="Institute of Technology" value="Institute of Technology">
+              <label for="Institute of Technology">Institute of Technology</label>
+            </div>
+            <br>
+          </div>
+          <figure>
+            <img src="pylon.png" alt="Image description">
+          </figure>
+				</div>
+			</div>
+      <li class="card" id="card_2">
+        <div class="card__content">
+          <div>
+            <div class="form__group">
+              <br>
+            <h2>Student ID Information</h2>
+                <label for="Student Number">Student Number: </label>
+                <input type="text" class="question" name="Student Number" id="Student Number" pattern="(2019|2020|2021)-[0-9]{5}-(MN)-0" placeholder="ex. 2021-12345-MN-0" required>
+                <br>
+                 <label for="First Name">First Name:</label>
+                 <input type="text" name="First Name" required>
+                <br>
+                <label for="Middle Name">Middle Name:</label>
+                <input type="text" name="Middle Name" >
+                <br>
+                <label for="Last Name">Last Name:</label>
+                <input type="text" name="Last Name" required>
+                <br>
+                <label for="Gender"> Gender: </label>
+                <label>
+                    <input type="radio" name="Gender" value="Male">
+                    Male
+                </label>
+                <label>
+                    <input type="radio" name="Gender" value="Female">
+                    Female
+                </label>
+                <br>
+                <label for="Birthdate">Date of Birth: </label>
+                <input type="date" name="Birthdate" id="birthdate" min="1924-01-01" max="2009-02-11" required>
+                <br>
+                <label for="College">College: </label>
+                <select id="Colleges" name="College" onchange="updateCourses()">
+                    <option value="" disabled selected>Select a College</option>
+                    <option value="CAF">College of Accountancy and Finance (CAF)</option>
+                    <option value="CADBE">College of Architecture, Design and the Built Environment (CADBE)</option>
+                    <option value="CAL">College of Arts and Letters (CAL)</option>
+                    <option value="CBA">College of Business Administration (CBA)</option>
+                    <option value="COC">College of Communication (COC)</option>
+                    <option value="CCIS">College of Computer and Information Sciences (CCIS)</option>
+                    <option value="COED">College of Education (COED)</option>
+                    <option value="CE">College of Engineering (CE)</option>
+                    <option value="CHK">College of Human Kinetics (CHK)</option>
+                    <option value="CL">College of Law (CL)</option>
+                    <option value="CPSPA">College of Political Science and Public Administration (CPSPA)</option>
+                    <option value="CSSD">College of Social Sciences and Development (CSSD)</option>
+                    <option value="CS">College of Science (CS)</option>
+                    <option value="CTHTM">College of Tourism, Hospitality and Transportation Management (CTHTM)</option>
+                    <option value="ITech">Institute of Technology (ITech)</option>
+                </select>
+                <br>
+                <label for="Course">Course:</label>
+                <select type="dropdown" id="Course" name="Course" required></select>
+                <br>
+                <label for="Year and Section">Year & Section:</label>
+                <input type="text" id="Year and Section" name="Year and Section" pattern="[1-5]-[1-5]||[1-2]N|[1-2]n" required>
+                <br>
+                <label for="Home Address">Home Address:</label>
+                <input type="text" id="Home Address" name="Home Address" required>
+                <br>
+                <label for="Phone Number">Phone/Mobile No.:</label>
+                <input type="tel" id="Phone Number" name="Phone Number" pattern="(09)[0-9]{9}" required>
+                <br>
+                <label for="Email">Email Address:</label>
+                <input type="email" id="Email" name="Email" required>
+                </div>
+                <br>
+              </div>
+              <figure>
+                <img src="pupic.jpg" alt="Image description">
+              </figure>
+        </div>
+      </li>
+		<li class="card" id="card_3">
+			<div class="card__content">
+				<div>
+          <br>
+					<h2>Emergency Contact Information</h2>
+					<p>In case of emergency, please notify:</p>
+          <div>
+            <label for="ECI Name">Complete Name:</label>
+            <input type="text" id="ECI Name" name="ECI Name" required>
+            <br>
+            <label for="ECI Number">Phone/Mobile No.:</label>
+            <input type="tel" id="ECINumber" name="ECI Number" pattern="(09)[0-9]{9}" required>
+            <br>
+            <label for="ECI Address">Address:</label>
+            <input id="ECI Address" name="ECI Address" required>
+            <br>
+            <div>
+              <input class="btn" type="submit">
+            </div>
+            <br>
+          </div>
+				</div>
+				<figure>
+					<img src="pupskyview.jpg" alt="Image description">
+				</figure>
+			</div>
+		</li>
+	</ul>
+  </form>
+</main>
+<aside>
+	<div class="footer">
+    <p style="text-align: center;">&copy; 2024 Polytechnic University of the Philippines | Phone: (123) 456-7890</p>
+  </div>
+</aside>
+</main>
+</body>
+</form>
+</html>
